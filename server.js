@@ -11,7 +11,7 @@ const noteId = require('generate-unique-id');
 const app = express();
 
 //creating a notesd object to hold the json object
-const {notes} = require('./db/db.json')
+const notes = require('./db/db.json')
 
 //creating middleware instances
 //tells the server that the public file is the root
@@ -31,28 +31,20 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 });
 
-//creating the createNote function
-function createNote(body, notesArray){
-    const note = body;
-    //pushing the note to the array
-    notesArray.push(note);
-    //syncing file with new note
-    fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify({notes:notesArray}, null, 2));
-    //returning the new note
-    return note;
-}
-
 //creating the /api/notes path to allow the user to see the notes that are saved and added to the json file
 app.get('/api/notes', (req, res) => {
     res.json(notes);
 })
 
 //creating a post to show/add notes to the screen
+//this post is recieved by a fetch in the index.js file!
 app.post('/api/notes', (req, res) => {
     req.body.id = noteId();
-    const note = createNote(req.body, notes);
-    //sending the note/s
-    res.json(note);
+    //pushing the note to the array
+    notes.push(req.body);
+    //syncing file with new note
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(notes));
+    res.json(notes);
 });
 
 //creating a listener to know wehen theserver is running
