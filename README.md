@@ -1,5 +1,7 @@
 # Simple Notes App
 
+Link to Heroku Project! - https://simple-server-notes.herokuapp.com/
+
 ## Description
 
 This application allows users to create notes. Using HTML, CSS, JavaScript, Node.js, Express.js, and other NPM packages my job was to properly connect existing code and fucntions to self creatign server routes and paths. These routes allowed the buttons and data to be clickable and readable for the user!
@@ -55,3 +57,8 @@ SOFTWARE.
 ## Features
 
 Note Taker, that saves your notes!
+
+## Screenshots
+![notetaker1](https://user-images.githubusercontent.com/78399517/231912357-2959db23-9af1-4bb8-b17c-ddfde37587a3.png)
+![notetaker2](https://user-images.githubusercontent.com/78399517/231912373-1a962443-2077-4920-89e9-9017224fb822.png)
+
