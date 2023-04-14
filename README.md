@@ -2,7 +2,7 @@
 
 ## Description
 
-This application allows users to create notes. I worked on the back end server routes and making sure the fetch and posts were properly executed to amke the app work.
+This application allows users to create notes. Using HTML, CSS, JavaScript, Node.js, Express.js, and other NPM packages my job was to properly connect existing code and fucntions to self creatign server routes and paths. These routes allowed the buttons and data to be clickable and readable for the user!
 
 ## Table of Contents
 
